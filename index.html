@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Taiba Crispy Chicken Center | Bengaluru</title>
+    
+    <!-- SEO & Discovery Meta Tags -->
+    <meta name="description" content="Al-Taiba Crispy Chicken Center in Bengaluru. Enjoy fresh, never-frozen crispy chicken, signature loaded fries, shawarma, and pizza at our Kanakanagar and Shivajinagar branches.">
+    <link rel="canonical" href="https://altaibacrispychickencenter.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:url" content="https://altaibacrispychickencenter.com/">
+    <meta property="og:title" content="Al-Taiba Crispy Chicken Center | Bengaluru">
+    <meta property="og:description" content="Fresh, never-frozen crispy chicken, burgers, and shawarma. Visit our Kanakanagar or Shivajinagar branches.">
+    <meta property="og:image" content="https://altaibacrispychickencenter.com/Assets/Al-Taiba%20logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://altaibacrispychickencenter.com/">
+    <meta property="twitter:title" content="Al-Taiba Crispy Chicken Center | Bengaluru">
+    <meta property="twitter:description" content="Fresh, never-frozen crispy chicken, burgers, and shawarma. Visit our Kanakanagar or Shivajinagar branches.">
+    <meta property="twitter:image" content="https://altaibacrispychickencenter.com/Assets/Al-Taiba%20logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #ffa033;
+            --color-primary-hover: #e68d2b;
+            --color-accent: #F59E0B;
+            --color-accent-hover: #D97706;
+            --color-text-dark: #1F2937;
+            --color-text-light: #6B7280;
+            --color-bg-white: #FFFFFF;
+            --color-bg-offwhite: #F9FAFB;
+            --font-anchor: 'Inter', sans-serif;
+            --font-flair: 'Playfair Display', serif;
+            --radius-pill: 50px;
+            --radius-soft: 16px;
+            --radius-softer: 24px;
+            --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-smooth: 0.3s ease-out;
+            --transition-bounce: 0.5s var(--spring);
+            --space-section: clamp(60px, 10vw, 120px);
+            --space-content: clamp(24px, 4vw, 48px);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-anchor);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-flair);
+            line-height: 1.2;
+            color: var(--color-text-dark);
+        }
+
+        .text-center { text-align: center; }
+        .text-accent { color: var(--color-accent); }
+        .text-primary { color: var(--color-primary); }
+
+        .section-title {
+            font-size: clamp(32px, 5vw, 56px);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-anchor);
+            font-size: clamp(14px, 2vw, 18px);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            background-color: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .nav-hidden { 
+            transform: translateY(-100%); 
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1440px;
+            padding: 0 27px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-flair);
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            z-index: 1001;
+            transition: opacity 0.2s ease;
+        }
+        
+        .nav-logo:hover {
+            opacity: 0.6;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 37px;
+        }
+
+        .nav-link {
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        .nav-links .btn {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .nav-links .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links .btn:active {
+            transform: scale(0.98);
+        }
+        
+        .nav-btn {
+            height: 39px;
+            padding: 0 16px;
+            font-size: 20px !important;
+            font-weight: 700;
+            line-height: 1;
+            border-radius: 50px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: #ffffff;
+            transition: 0.3s ease;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform var(--transition-bounce), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(255, 160, 51, 0.2);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-text-dark);
+            border: 2px solid var(--color-text-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-text-dark);
+            color: white;
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        .btn-accent {
+            background-color: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-color: var(--color-bg-offwhite);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            padding: 0 60px;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 5vw, 64px);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-desc {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--color-text-light);
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 10s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: var(--space-section) 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 8vw, 80px);
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--radius-softer);
+            overflow: hidden;
+            aspect-ratio: 1/1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: var(--color-text-light);
+            margin-bottom: 24px;
+        }
+
+        .bg-offwhite {
+            background-color: var(--color-bg-offwhite);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .menu-card {
+            background: var(--color-bg-white);
+            border-radius: var(--radius-soft);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: transform var(--transition-bounce), box-shadow var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .menu-img-wrapper {
+            position: relative;
+            padding-top: 75%;
+            overflow: hidden;
+            background-color: var(--color-text-dark);
+        }
+
+        .menu-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-bounce);
+        }
+
+        .menu-card:hover .menu-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .menu-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-title {
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-family: var(--font-anchor);
+            font-weight: 700;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        
+        .menu-desc {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+            flex-grow: 1;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* Full Menu Styles */
+        .full-menu-section {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .full-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+
+        .menu-category-title {
+            font-family: var(--font-flair);
+            font-size: 26px;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-bg-offwhite);
+            padding-bottom: 12px;
+        }
+
+        .menu-list-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 16px;
+            border-bottom: 1px dashed rgba(0,0,0,0.08);
+            padding-bottom: 6px;
+        }
+
+        .menu-item-name {
+            font-weight: 500;
+            color: var(--color-text-dark);
+        }
+
+        .menu-item-price {
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 16px;
+            margin-top: 48px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-soft);
+            overflow: hidden;
+            cursor: pointer;
+            height: 100%;
+        }
+        
+        .aspect-square {
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 3; 
+        }
+        
+        .gallery-item.large img {
+            object-fit: cover;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-bounce), filter var(--transition-smooth);
+            display: block; 
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.9);
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity var(--transition-smooth), transform var(--transition-bounce);
+        }
+        
+        .gallery-item:hover .gallery-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .location-card {
+            background: var(--color-bg-white);
+            border-radius: var(--radius-softer);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform var(--transition-bounce);
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .location-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: var(--color-text-light);
+        }
+
+        .info-row svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cta-section {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: clamp(80px, 10vw, 120px) 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            color: white;
+            font-size: clamp(36px, 6vw, 64px);
+            margin-bottom: 24px;
+        }
+
+        .cta-content p {
+            font-size: clamp(16px, 2vw, 20px);
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background-color: var(--color-text-dark);
+            color: white;
+            padding: 24px 0 16px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col {
+            text-align: center;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-family: var(--font-anchor);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #9CA3AF;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: color var(--transition-smooth);
+        }
+
+        .footer-col a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 16px;
+            color: #9CA3AF;
+            font-size: 13px;
+            text-align: center;
+        }
+        
+        .creator-link {
+            font-size: 14px;
+            color: #9CA3AF;
+            margin-bottom: 0 !important;
+        }
+        
+        .creator-link a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color var(--transition-smooth);
+        }
+        
+        .creator-link a:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .hidden-scroll { 
+            opacity: 0; 
+            transform: translateY(60px); 
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
+            will-change: opacity, transform; 
+        }
+        .show-scroll { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        @media (min-width: 769px) {
+            .footer .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .footer-grid {
+                display: contents;
+            }
+            .footer-bottom {
+                border-top: none;
+                padding-top: 0;
+                order: 1;
+            }
+            .footer-col:first-child {
+                text-align: left;
+            }
+            .footer-col:last-child {
+                order: 2;
+                text-align: right;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-grid {
+                padding: 0; 
+                gap: 10px;
+            }
+            .hero {
+                text-align: center;
+                padding-top: 80px; 
+                padding-bottom: 60px;
+            }
+            .hero-content {
+                order: 2; 
+            }
+            .hero-desc {
+                margin: 0 auto 24px auto;
+            }
+            .hero-image-wrapper {
+                order: 1;
+                margin-top: 0; 
+                margin-bottom: -25px;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item.large {
+                grid-column: span 2; 
+                grid-row: auto;
+                aspect-ratio: 3/4; 
+            }
+            .gallery-item:not(.large) {
+                 aspect-ratio: 1/1;
+            }
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+        @media (max-width: 768px) {
+             .hero {
+                padding-top: 60px; 
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(20, 20, 20, 0.95);
+                -webkit-backdrop-filter: blur(16px) saturate(180%);
+                backdrop-filter: blur(16px) saturate(180%);
+                flex-direction: column;
+                padding: 40px 0;
+                gap: 24px;
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+                border-bottom: 1px solid rgba(0,0,0,0.08);
+            }
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .gallery-item.large {
+                grid-column: span 1; 
+                grid-row: auto;
+                aspect-ratio: 1 / 1; 
+            }
+            .gallery-item:not(.large) {
+                aspect-ratio: 1 / 1; 
+            }
+            .gallery-label {
+                font-size: 14px; 
+                bottom: 12px;
+                left: 12px;
+            }
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 16px; 
+            }
+            .menu-content {
+                padding: 16px; 
+            }
+            .menu-title {
+                font-size: 18px; 
+            }
+            .menu-desc {
+                font-size: 12px;
+            }
+            .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .footer {
+                padding: 16px 0 12px;
+            }
+            .footer-grid {
+                gap: 4px;
+                margin-bottom: 12px;
+            }
+            .footer-col {
+                text-align: center;
+            }
+            .footer-col p, .footer-col a {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+
+    <!-- Strictly Validated JSON-LD Structured Data (No Fabrications) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Al-Taiba Crispy Chicken Center",
+      "url": "https://altaibacrispychickencenter.com/",
+      "logo": "https://altaibacrispychickencenter.com/Assets/Al-Taiba%20logo.png",
+      "image": "https://altaibacrispychickencenter.com/Assets/loaded.jpg",
+      "servesCuisine": ["Fast Food", "Crispy Chicken", "Fried Chicken", "Shawarma"],
+      "priceRange": "₹",
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Al-Taiba Crispy Chicken Center Full Menu",
+        "url": "https://altaibacrispychickencenter.com/#menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Crispy Chicken",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Chicken Lollipop", "offers": { "@type": "Offer", "price": "60", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Crispy Wings", "offers": { "@type": "Offer", "price": "60", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Crispy Leg", "offers": { "@type": "Offer", "price": "70", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Crispy Thai", "offers": { "@type": "Offer", "price": "70", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Crispy Stripes", "offers": { "@type": "Offer", "price": "100", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Crispy Popcorn", "offers": { "@type": "Offer", "price": "100", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Pizza",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Onion Pizza", "offers": { "@type": "Offer", "price": "99", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Tomato Pizza", "offers": { "@type": "Offer", "price": "99", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Capsicum Pizza", "offers": { "@type": "Offer", "price": "119", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Corn Chees Pizza", "offers": { "@type": "Offer", "price": "149", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Double Margarita Pizza", "offers": { "@type": "Offer", "price": "179", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Crispy Chicken Pizza" }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Burger",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Normal Burger", "offers": { "@type": "Offer", "price": "80", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Combo Burger", "offers": { "@type": "Offer", "price": "99", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Hot Crispy Burger", "offers": { "@type": "Offer", "price": "120", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Fries",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Normal Peri Peri Fries", "offers": { "@type": "Offer", "price": "100", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Cheese Fries", "offers": { "@type": "Offer", "price": "120", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Combo Meals",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Bucket Combo", "offers": { "@type": "Offer", "price": "350", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Loded Fries", "offers": { "@type": "Offer", "price": "200", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Mini Meals", "offers": { "@type": "Offer", "price": "200", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Family Meals", "offers": { "@type": "Offer", "price": "1199", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Pizza Combo", "offers": { "@type": "Offer", "price": "699", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Juice",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Lemon Juice", "offers": { "@type": "Offer", "price": "20", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Lemon Soda", "offers": { "@type": "Offer", "price": "30", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Orange Juice", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Pomegranate Juice", "offers": { "@type": "Offer", "price": "50", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Mausambi Juice", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Watermelon Juice", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Milkshake",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Mango Milkshake", "offers": { "@type": "Offer", "price": "49", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Anjir Milkshake", "offers": { "@type": "Offer", "price": "59", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Oreo Milkshake", "offers": { "@type": "Offer", "price": "59", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "KitKat Milkshake", "offers": { "@type": "Offer", "price": "59", "priceCurrency": "INR" } }
+            ]
+          }
+        ]
+      },
+      "department": [
+        {
+          "@type": "Restaurant",
+          "name": "Al-Taiba Crispy Chicken Center - Kanakanagar",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6th Cross, Sultanpalya Main Road",
+            "addressLocality": "Kanakanagar, Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          },
+          "telephone": "+916366646009",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "15:00",
+            "closes": "23:00"
+          },
+          "hasMap": "https://maps.app.goo.gl/dpW6aY6EH5gE9LDt7"
+        },
+        {
+          "@type": "Restaurant",
+          "name": "Al-Taiba Crispy Chicken Center - Shivajinagar",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Opposite Russell Market",
+            "addressLocality": "Shivajinagar, Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          },
+          "telephone": "+916366646009",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "18:30",
+            "closes": "02:00"
+          },
+          "hasMap": "https://maps.app.goo.gl/NAjgQ9Sn73AqkQicA"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">Al-Taiba</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#locations" class="nav-link">Locations</a>
+                <a href="tel:6366646009" class="btn btn-primary nav-btn">Order Now</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-blob"></div>
+        <div class="container hero-grid">
+            <div class="hero-content hidden-scroll">
+                <h1 class="section-subtitle">Al-Taiba Crispy Chicken Center</h1>
+                <h2 class="hero-title">Crispy on the<br>outside, <span class="text-primary">juicy</span> on<br>the inside.</h2>
+                <p class="hero-desc">Experience the finest Signature Loaded and Crispy Chicken in Bengaluru, crafted with our secret blend of spices and fried to absolute perfection.</p>
+                <div class="hero-actions">
+                    <a href="tel:6366646009" class="btn btn-primary">Order Now</a>
+                    <a href="#locations" class="btn btn-outline nav-link">View Locations</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper hidden-scroll" style="transition-delay: 0.2s;">
+                <img src="Assets/Al-Taiba%20logo.png" alt="Al-Taiba Crispy Chicken Center Official Logo" fetchpriority="high" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container about-grid">
+            <div class="about-image hidden-scroll">
+                <img src="Assets/about%20image.JPG" loading="lazy" alt="Chef preparing fresh crispy chicken in the open kitchen at Al-Taiba" onerror="this.onerror=null; this.src='https://placehold.co/800x800/F59E0B/FFFFFF?text=About+Image';">
+            </div>
+            <div class="about-text hidden-scroll" style="transition-delay: 0.2s;">
+                <span class="section-subtitle">Our Story</span>
+                <h2 class="section-title">Fresh Chicken. Real Flavor.</h2>
+                <p>At Al-Taiba Crispy Chicken Center, every meal starts with fresh, never-frozen chicken prepared daily in our open kitchen, so you can see the quality for yourself.</p>
+                <p>From our juicy Hot Crispy Burger and flavorful Shawarma to our crowd favorite Signature Loaded, every bite is made fresh, crispy, and packed with flavor.</p>
+                <p>Come once, and you'll know why Signature Loaded is the dish everyone talks about.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="section bg-offwhite">
+        <div class="container">
+            <div class="text-center hidden-scroll">
+                <span class="section-subtitle">Our Menu</span>
+                <h2 class="section-title">Featured Favorites</h2>
+            </div>
+            
+            <!-- Featured Cards (Untouched as requested) -->
+            <div class="menu-grid">
+                <div class="menu-card hidden-scroll">
+                    <div class="menu-img-wrapper">
+                        <img src="Assets/loaded.jpg" loading="lazy" alt="Signature Loaded Crispy Chicken and Fries at Al-Taiba">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Signature Loaded</h3>
+                        <p class="menu-desc">Crispy chicken and golden fries loaded with our signature sauce.</p>
+                        <a href="tel:6366646009" class="text-primary font-bold hover:text-primary-hover" style="font-weight: 600;">Order Now →</a>
+                    </div>
+                </div>
+                <div class="menu-card hidden-scroll" style="transition-delay: 0.1s;">
+                    <div class="menu-img-wrapper">
+                        <img src="Assets/burger.png" loading="lazy" alt="Hot Crispy Chicken Burger from Al-Taiba Menu" onerror="this.onerror=null; this.src='https://placehold.co/600x450/1F2937/FFFFFF?text=Hot+Crispy+Burger';">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Hot Crispy Burger</h3>
+                        <p class="menu-desc">A crispy chicken burger with golden fries and our signature sauce.</p>
+                        <a href="tel:6366646009" class="text-primary font-bold hover:text-primary-hover" style="font-weight: 600;">Order Now →</a>
+                    </div>
+                </div>
+                <div class="menu-card hidden-scroll" style="transition-delay: 0.2s;">
+                    <div class="menu-img-wrapper">
+                        <img src="Assets/broasted.jpg" loading="lazy" alt="Crispy Fried Chicken Broast by Al-Taiba">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Crispy Chicken</h3>
+                        <p class="menu-desc">Crispy, golden fried chicken with a crunchy coating and juicy meat inside.</p>
+                        <a href="tel:6366646009" class="text-primary font-bold hover:text-primary-hover" style="font-weight: 600;">Order Now →</a>
+                    </div>
+                </div>
+                <div class="menu-card hidden-scroll">
+                    <div class="menu-img-wrapper">
+                        <img src="Assets/shawarma.png" loading="lazy" alt="Fresh Chicken Shawarma Roll in Bengaluru" onerror="this.onerror=null; this.src='https://placehold.co/600x450/1F2937/FFFFFF?text=Shawarma';">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Shawarma</h3>
+                        <p class="menu-desc">Tender chicken with fresh veggies, mint chutney, and creamy shawarma mayo, wrapped in a soft flatbread.</p>
+                        <a href="tel:6366646009" class="text-primary font-bold hover:text-primary-hover" style="font-weight: 600;">Order Now →</a>
+                    </div>
+                </div>
+                <!-- Verified: Visible Pizza card says "Crispy Chicken Pizza" -->
+                <div class="menu-card hidden-scroll" style="transition-delay: 0.1s;">
+                    <div class="menu-img-wrapper">
+                        <img src="Assets/pizza.png" loading="lazy" alt="Freshly Baked Crispy Chicken Pizza at Al-Taiba">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Crispy Chicken Pizza</h3>
+                        <p class="menu-desc">Freshly baked pizza topped with flavorful sauce, chicken, veggies, and melted mozzarella.</p>
+                        <a href="tel:6366646009" class="text-primary font-bold hover:text-primary-hover" style="font-weight: 600;">Order Now →</a>
+                    </div>
+                </div>
+                <div class="menu-card hidden-scroll" style="transition-delay: 0.2s;">
+                    <div class="menu-img-wrapper">
+                        <img src="Assets/chicken%20roll.png" loading="lazy" alt="Crispy Chicken Roll" onerror="this.onerror=null; this.src='https://placehold.co/600x450/1F2937/FFFFFF?text=Chicken+Roll';">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Chicken Roll</h3>
+                        <p class="menu-desc">Crispy chicken, fresh veggies, and sauce wrapped in a soft flatbread.</p>
+                        <a href="tel:6366646009" class="text-primary font-bold hover:text-primary-hover" style="font-weight: 600;">Order Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View Full Menu Interaction (Accessible for Users & Search Engines) -->
+            <div class="text-center hidden-scroll" style="margin-top: 48px;">
+                <button id="view-full-menu-btn" class="btn btn-outline" aria-expanded="false">View Full Menu</button>
+            </div>
+
+            <!-- Complete Menu Content (Toggleable) -->
+            <div id="full-menu-container" class="full-menu-section" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
+                <div class="full-menu-grid">
+                    
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Crispy Chicken</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Chicken Lollipop</span><span class="menu-item-price">₹60</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Crispy Wings</span><span class="menu-item-price">₹60</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Crispy Leg</span><span class="menu-item-price">₹70</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Crispy Thai</span><span class="menu-item-price">₹70</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Crispy Stripes</span><span class="menu-item-price">₹100</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Crispy Popcorn</span><span class="menu-item-price">₹100</span></div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Pizza</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Onion Pizza</span><span class="menu-item-price">₹99</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Tomato Pizza</span><span class="menu-item-price">₹99</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Capsicum Pizza</span><span class="menu-item-price">₹119</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Corn Chees Pizza</span><span class="menu-item-price">₹149</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Double Margarita Pizza</span><span class="menu-item-price">₹179</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Crispy Chicken Pizza</span><span class="menu-item-price">-</span></div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Burger</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Normal Burger</span><span class="menu-item-price">₹80</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Combo Burger</span><span class="menu-item-price">₹99</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Hot Crispy Burger</span><span class="menu-item-price">₹120</span></div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Fries</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Normal Peri Peri Fries</span><span class="menu-item-price">₹100</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Cheese Fries</span><span class="menu-item-price">₹120</span></div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Combo Meals</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Bucket Combo</span><span class="menu-item-price">₹350</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Loded Fries</span><span class="menu-item-price">₹200</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Mini Meals</span><span class="menu-item-price">₹200</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Family Meals</span><span class="menu-item-price">₹1199</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Pizza Combo</span><span class="menu-item-price">₹699</span></div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Juice</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Lemon Juice</span><span class="menu-item-price">₹20</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Lemon Soda</span><span class="menu-item-price">₹30</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Orange Juice</span><span class="menu-item-price">₹40</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Pomegranate Juice</span><span class="menu-item-price">₹50</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Mausambi Juice</span><span class="menu-item-price">₹40</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Watermelon Juice</span><span class="menu-item-price">₹40</span></div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h4 class="menu-category-title">Milkshake</h4>
+                        <div class="menu-list-item"><span class="menu-item-name">Mango Milkshake</span><span class="menu-item-price">₹49</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Anjir Milkshake</span><span class="menu-item-price">₹59</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">Oreo Milkshake</span><span class="menu-item-price">₹59</span></div>
+                        <div class="menu-list-item"><span class="menu-item-name">KitKat Milkshake</span><span class="menu-item-price">₹59</span></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="text-center hidden-scroll">
+                <span class="section-subtitle">Gallery</span>
+                <h2 class="section-title">Inside Al-Taiba</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large hidden-scroll">
+                    <img src="Assets/Food%20Closeup.jpg" loading="lazy" alt="Freshly Shaved Chicken Shawarma meat prep at Al-Taiba" onerror="this.onerror=null; this.src='https://placehold.co/600x800/1F2937/FFFFFF?text=Food+Close-up';">
+                    <span class="gallery-label">Freshly Shaved Shawarma</span>
+                </div>
+                <div class="gallery-item aspect-square hidden-scroll" style="transition-delay: 0.1s;">
+                    <img src="Assets/owner.jpg" loading="lazy" alt="Al-Taiba Crispy Chicken Center Founder" onerror="this.onerror=null; this.src='https://placehold.co/400x400/ffa033/FFFFFF?text=Owner';">
+                    <span class="gallery-label">The Founder</span>
+                </div>
+                <div class="gallery-item aspect-square hidden-scroll" style="transition-delay: 0.2s;">
+                    <img src="Assets/exterior.jpg" loading="lazy" alt="Al-Taiba Crispy Chicken Center Restaurant Storefront" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1F2937/FFFFFF?text=Exterior';">
+                    <span class="gallery-label">Storefront</span>
+                </div>
+                <div class="gallery-item aspect-square hidden-scroll" style="transition-delay: 0.3s;">
+                    <img src="Assets/kitchen.jpg" loading="lazy" alt="Al-Taiba Open Kitchen Cooking Crispy Chicken" onerror="this.onerror=null; this.src='https://placehold.co/400x400/F59E0B/FFFFFF?text=Kitchen';">
+                    <span class="gallery-label">Our Kitchen</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations" class="section bg-offwhite">
+        <div class="container">
+            <div class="text-center hidden-scroll">
+                <span class="section-subtitle">Visit Us</span>
+                <h2 class="section-title">Our Branches</h2>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card hidden-scroll">
+                    <h3 class="location-title">Kanakanagar Branch</h3>
+                    <div class="location-info">
+                        <div class="info-row">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>6th Cross, Kanakanagar, Sultanpalya Main Road</span>
+                        </div>
+                        <div class="info-row">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>3:00 PM - 11:00 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <span>636 664 6009</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/dpW6aY6EH5gE9LDt7" target="_blank" class="btn btn-outline" style="width: 100%;" title="Get Directions to Al-Taiba Kanakanagar Branch">Open in Maps</a>
+                </div>
+                <div class="location-card hidden-scroll" style="transition-delay: 0.2s;">
+                    <h3 class="location-title">Shivajinagar Branch</h3>
+                    <div class="location-info">
+                        <div class="info-row">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>Shivajinagar, opp Russell Market, Bengaluru</span>
+                        </div>
+                        <div class="info-row">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>Mon - Sun: 6:30 PM - 2:00 AM</span>
+                        </div>
+                        <div class="info-row">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <span>636 664 6009</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/NAjgQ9Sn73AqkQicA?g_st=aw" class="btn btn-outline" style="width: 100%;" target="_blank" title="Get Directions to Al-Taiba Shivajinagar Branch">Open in Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section hidden-scroll">
+        <div class="cta-content">
+            <h2>Craving something crispy?</h2>
+            <p>Call us now for takeaway or delivery and satisfy your cravings with the best chicken in town.</p>
+            <a href="tel:6366646009" class="btn btn-accent" style="font-size: 20px; padding: 18px 48px;">Order Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <p class="creator-link">Follow Us On <a href="https://www.instagram.com/ip77684" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+                </div>
+                <div class="footer-col">
+                    <p class="creator-link">Website By <a href="https://sufiyan-mohd.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Mohammed Sufiyan</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; <span id="year"></span> Al-Taiba Crispy Chicken Center. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Toggle Full Menu
+            const fullMenuBtn = document.getElementById('view-full-menu-btn');
+            const fullMenuContainer = document.getElementById('full-menu-container');
+
+            if (fullMenuBtn && fullMenuContainer) {
+                fullMenuBtn.addEventListener('click', () => {
+                    const isHidden = fullMenuContainer.style.display === 'none';
+                    if (isHidden) {
+                        fullMenuContainer.style.display = 'block';
+                        // Small delay to allow display block to render before opacity transition
+                        setTimeout(() => {
+                            fullMenuContainer.style.opacity = '1';
+                        }, 10);
+                        fullMenuBtn.textContent = 'Hide Full Menu';
+                        fullMenuBtn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        fullMenuContainer.style.opacity = '0';
+                        setTimeout(() => {
+                            fullMenuContainer.style.display = 'none';
+                        }, 300); // Matches the CSS transition time
+                        fullMenuBtn.textContent = 'View Full Menu';
+                        fullMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            const links = document.querySelectorAll('.nav-link');
+
+            const toggleMenu = () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            };
+
+            hamburger.addEventListener('click', toggleMenu);
+
+            const getTrueOffsetTop = (element) => {
+                let top = 0;
+                let current = element;
+                while (current) {
+                    top += current.offsetTop;
+                    current = current.offsetParent;
+                }
+                return top;
+            };
+
+            const easeInOutCubic = (t) => {
+                return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            };
+
+            const customSmoothScroll = (targetPosition, duration = 1200) => { 
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
+
+                const animation = (currentTime) => {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const ease = easeInOutCubic(progress);
+                    window.scrollTo(0, startPosition + distance * ease);
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                };
+
+                requestAnimationFrame(animation);
+            };
+
+            const navbar = document.getElementById('navbar');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        e.preventDefault(); 
+                        if (navLinks.classList.contains('active')) {
+                            toggleMenu();
+                        }
+                        
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            let sectionPosition = getTrueOffsetTop(targetSection);
+                            if (targetId === '#locations' && window.innerWidth <= 992) {
+                                sectionPosition -= 50;
+                            }
+                            customSmoothScroll(sectionPosition, 1200);
+                        }
+                    }
+                });
+            });
+
+            const navLogo = document.querySelector('.nav-logo');
+            if (navLogo) {
+                navLogo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    customSmoothScroll(0, 1200);
+                });
+            }
+
+            if (navbar) {
+                let scrollTimeout;
+                let isMouseAtTop = false;
+
+                const startHideTimer = () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        if (window.scrollY > 50 && !isMouseAtTop) {
+                            navbar.classList.add('nav-hidden');
+                        }
+                    }, 2000);
+                };
+
+                window.addEventListener('scroll', () => {
+                    navbar.classList.remove('nav-hidden');
+                    startHideTimer();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (e.clientY < 60) {
+                        isMouseAtTop = true;
+                        navbar.classList.remove('nav-hidden');
+                        clearTimeout(scrollTimeout);
+                    } else if (isMouseAtTop) {
+                        isMouseAtTop = false;
+                        startHideTimer();
+                    }
+                });
+
+                navbar.addEventListener('click', () => {
+                    setTimeout(() => {
+                        isMouseAtTop = false;
+                        startHideTimer();
+                    }, 100);
+                });
+            }
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show-scroll');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            const elementsToAnimate = document.querySelectorAll('.hidden-scroll');
+            elementsToAnimate.forEach(el => scrollObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
