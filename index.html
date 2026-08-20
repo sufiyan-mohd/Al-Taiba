@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="icon" type="image/png" href="Assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Taiba Crispy Chicken Center | Bengaluru</title>
@@ -1261,6 +1260,15 @@
         </div>
     </footer>
 
+    <!-- Order Modal for Desktop -->
+    <div id="order-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 32px; border-radius: 16px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <h3 style="font-family: var(--font-anchor); font-size: 22px; margin-bottom: 12px; color: var(--color-text-dark);">Place an Order</h3>
+            <p style="font-size: 16px; color: var(--color-text-light); margin-bottom: 24px; line-height: 1.5;">Dial <span style="color: var(--color-primary); font-weight: 600;">6366646009</span> to place a order<br>Thank you!</p>
+            <button id="close-order-modal" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">OK</button>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('year').textContent = new Date().getFullYear();
@@ -1274,7 +1282,6 @@
                     const isHidden = fullMenuContainer.style.display === 'none';
                     if (isHidden) {
                         fullMenuContainer.style.display = 'block';
-                        // Small delay to allow display block to render before opacity transition
                         setTimeout(() => {
                             fullMenuContainer.style.opacity = '1';
                         }, 10);
@@ -1284,7 +1291,7 @@
                         fullMenuContainer.style.opacity = '0';
                         setTimeout(() => {
                             fullMenuContainer.style.display = 'none';
-                        }, 300); // Matches the CSS transition time
+                        }, 300);
                         fullMenuBtn.textContent = 'View Full Menu';
                         fullMenuBtn.setAttribute('aria-expanded', 'false');
                     }
@@ -1414,6 +1421,36 @@
 
             const elementsToAnimate = document.querySelectorAll('.hidden-scroll');
             elementsToAnimate.forEach(el => scrollObserver.observe(el));
+
+            // Desktop Tel Link Interceptor for Order Modal
+            const orderModal = document.getElementById('order-modal');
+            const closeOrderModalBtn = document.getElementById('close-order-modal');
+            
+            const isDesktop = () => {
+                return !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768);
+            };
+
+            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (isDesktop()) {
+                        e.preventDefault();
+                        if (orderModal) {
+                            orderModal.style.display = 'flex';
+                        }
+                    }
+                });
+            });
+
+            if (closeOrderModalBtn && orderModal) {
+                closeOrderModalBtn.addEventListener('click', () => {
+                    orderModal.style.display = 'none';
+                });
+                orderModal.addEventListener('click', (e) => {
+                    if (e.target === orderModal) {
+                        orderModal.style.display = 'none';
+                    }
+                });
+            }
         });
     </script>
 </body>
