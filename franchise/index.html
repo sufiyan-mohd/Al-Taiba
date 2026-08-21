@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Adjusted relative path for /franchise/ directory -->
     <link rel="icon" type="image/png" href="../Assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +75,6 @@
 
         .section-title { font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; }
         
-        /* The existing "Hidden SEO" style trick from homepage: Looks like a small label, acts as the H1 */
         .section-subtitle {
             font-family: var(--font-anchor);
             font-size: clamp(14px, 2vw, 18px);
@@ -125,7 +123,6 @@
         .section { padding: var(--space-section) 0; }
         .bg-offwhite { background-color: var(--color-bg-offwhite); }
 
-        /* Franchise Hero */
         .hero-franchise {
             position: relative; min-height: 70vh; display: flex; align-items: center; justify-content: center;
             padding-top: 100px; padding-bottom: 60px; background-color: var(--color-bg-offwhite);
@@ -140,7 +137,6 @@
         .hero-title-large { font-size: clamp(40px, 6vw, 64px); margin-bottom: 24px; letter-spacing: -0.02em; }
         .hero-subtitle-large { font-size: clamp(18px, 2.5vw, 22px); color: var(--color-text-light); margin-bottom: 40px; }
 
-        /* SEO Content Block */
         .seo-intro {
             max-width: 800px;
             margin: 0 auto;
@@ -176,7 +172,6 @@
         .package-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; color: var(--color-text-dark); }
         .package-list svg { width: 22px; height: 22px; fill: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
 
-        /* FAQ Section styling for semantic details/summary */
         .faq-grid {
             max-width: 800px; margin: 48px auto 0;
             display: flex; flex-direction: column; gap: 16px;
@@ -257,7 +252,6 @@
         }
     </style>
 
-    <!-- Semantic JSON-LD for Franchise specific SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -336,7 +330,7 @@
     <header>
         <nav class="navbar" id="navbar">
             <div class="container">
-                <a href="../index.html" class="nav-logo" title="Back to Homepage">Al-Taiba</a>
+                <a href="#" class="nav-logo" title="Scroll to Top">Al-Taiba</a>
                 <div class="nav-links" id="nav-links">
                     <a href="../index.html" class="nav-link" title="Al-Taiba Homepage">Homepage</a>
                     <a href="#packages" class="nav-link">Franchise Packages</a>
@@ -355,7 +349,6 @@
     <main>
         <section class="hero-franchise">
             <div class="container hidden-scroll">
-                <!-- Using the existing homepage "hidden SEO" architecture: H1 styled as a subtitle -->
                 <h1 class="section-subtitle">Al-Taiba Crispy Chicken Center Franchise Opportunity</h1>
                 <h2 class="hero-title-large">Start Your Own <span class="text-primary">Al-Taiba</span> Franchise</h2>
                 <p class="hero-subtitle-large">Bring our famous, fresh-never-frozen crispy chicken and signature loaded fries to your location. Join our growing family and build a profitable business with a proven concept.</p>
@@ -363,7 +356,6 @@
             </div>
         </section>
 
-        <!-- Semantic SEO Supporting Content -->
         <section class="section">
             <div class="container hidden-scroll">
                 <div class="seo-intro">
@@ -460,7 +452,6 @@
             </div>
         </section>
 
-        <!-- New SEO-Driven FAQ Section -->
         <section class="section" id="faq">
             <div class="container">
                 <div class="text-center hidden-scroll">
@@ -564,12 +555,13 @@
                 requestAnimationFrame(animation);
             };
 
-            // Smooth Scroll for local anchor links
+            // Smooth Scroll for local anchor links (This captures our new href="#" Logo)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
                     if (navLinks.classList.contains('active')) toggleMenu();
 
+                    // If the user clicks on the logo (href="#"), gracefully scroll them to the very top (position 0)
                     if(targetId === '#') {
                         e.preventDefault();
                         customSmoothScroll(0, 1200);
