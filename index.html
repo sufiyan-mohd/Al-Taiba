@@ -116,99 +116,152 @@
             padding: 0 24px;
         }
 
+        /* ===== LIQUID GLASS NAVBAR STYLES ===== */
         .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 18px;
+            left: 35px;
+            right: 35px;
             height: 60px;
-            display: flex;
-            align-items: center;
             z-index: 1000;
-            background-color: rgba(20, 20, 20, 0.4);
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), all 0.3s ease;
         }
 
         .nav-hidden { 
-            transform: translateY(-100%); 
+            transform: translateY(-150%); 
         }
 
-        .navbar .container {
+        /* Isolated Glass Pane to prevent nested backdrop-filter bug */
+        .navbar-glass-pane {
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.2); 
+            border: 1px solid rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            z-index: 1;
+            pointer-events: none; /* Allows clicks to pass through to contents */
+        }
+
+        .navbar-content {
+            position: relative;
+            z-index: 2; /* Sits above the glass pane */
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 1440px;
-            padding: 0 27px;
+            height: 100%;
+            padding: 0 20px;
         }
 
-        .nav-logo {
+        .navbar-brand {
             font-family: var(--font-flair);
-            font-size: 24px;
             font-weight: 700;
-            color: #ffffff;
-            z-index: 1001;
-            transition: opacity 0.2s ease;
-        }
-        
-        .nav-logo:hover {
-            opacity: 0.6;
+            font-size: 1.5rem;
+            color: #ffffff; 
+            letter-spacing: -0.5px;
         }
 
-        .nav-links {
+        /* Shared Desktop + Mobile Nav Wrap */
+        .nav-menu {
             display: flex;
             align-items: center;
-            gap: 37px;
+            gap: 24px;
         }
 
-        .nav-link {
-            font-size: 20px;
+        .navbar-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .navbar .nav-link {
+            color: rgba(255, 255, 255, 0.9); 
+            text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
             color: #ffffff;
-            transition: opacity 0.2s ease;
+            background: rgba(255, 255, 255, 0.15); 
         }
 
-        .nav-link:hover {
-            opacity: 0.6;
+        .navbar .nav-link:active {
+            background: rgba(255, 255, 255, 0.25);
         }
 
-        .nav-links .btn {
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
+        .navbar-cta {
+            display: flex;
+            align-items: center;
         }
 
-        .nav-links .btn:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links .btn:active {
-            transform: scale(0.98);
-        }
-        
-        .nav-btn {
-            height: 39px;
-            padding: 0 16px;
-            font-size: 20px !important;
-            font-weight: 700;
-            line-height: 1;
+        .cta-button {
+            /* Changed to 70% opacity orange */
+            background: rgba(255, 160, 51, 0.7);
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 10px 24px;
             border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
         }
 
+        .cta-button:hover {
+            /* Slightly more opaque on hover */
+            background: rgba(255, 160, 51, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 160, 51, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Hamburger Menu Icon (Hidden on Desktop) */
         .hamburger {
             display: none;
             flex-direction: column;
-            gap: 5px;
-            z-index: 1001;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
         }
 
         .hamburger span {
-            width: 24px;
+            width: 100%;
             height: 2px;
             background-color: #ffffff;
-            transition: 0.3s ease;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
         }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        /* ====================================== */
 
         .btn {
             display: inline-flex;
@@ -754,32 +807,91 @@
             }
         }
 
+        /* ===== LIQUID GLASS NAVBAR RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .nav-menu { gap: 14px; }
+            .navbar-nav { gap: 14px; }
+            .navbar .nav-link { font-size: 0.85rem; padding: 6px 10px; }
+        }
+
         @media (max-width: 768px) {
-             .hero {
-                padding-top: 60px; 
+            .navbar {
+                top: 12px; left: 20px; right: 20px; height: 50px;
             }
-            .hamburger {
-                display: flex;
+            .navbar-glass-pane {
+                border-radius: 16px;
             }
-            .nav-links {
+            .navbar-content {
+                padding: 0 15px;
+            }
+            .navbar-brand { font-size: 1.25rem; }
+            
+            /* Show Hamburger */
+            .hamburger { display: flex; }
+            
+            /* Transform Nav Menu into Mobile Dropdown */
+            .nav-menu {
                 position: absolute;
                 top: 100%;
                 left: 0;
-                width: 100%;
-                background-color: rgba(20, 20, 20, 0.95);
-                -webkit-backdrop-filter: blur(16px) saturate(180%);
-                backdrop-filter: blur(16px) saturate(180%);
+                right: 0;
+                margin-top: 10px; /* Gap below navbar */
                 flex-direction: column;
-                padding: 40px 0;
-                gap: 24px;
-                transform: translateY(-150%);
+                
+                /* Match Navbar Glass UI */
+                background: rgba(0, 0, 0, 0.2); 
+                border: 1px solid rgba(0, 0, 0, 0.2); 
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+                border-radius: 16px; 
+                
+                padding: 24px 20px;
+                gap: 16px;
+                
+                /* Animation States */
+                visibility: hidden;
                 opacity: 0;
-                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
-                border-bottom: 1px solid rgba(0,0,0,0.08);
+                transform: translateY(-15px);
+                transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+                z-index: 999;
             }
-            .nav-links.active {
-                transform: translateY(0);
+
+            .nav-menu.active {
+                visibility: visible;
                 opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Center Mobile Links */
+            .navbar-nav {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+                align-items: center;
+            }
+
+            .navbar .nav-link { 
+                font-size: 1.05rem; 
+                padding: 10px; 
+                width: 100%; 
+                text-align: center; 
+            }
+
+            .navbar-cta {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .cta-button { 
+                font-size: 0.95rem; 
+                padding: 12px 24px; 
+                width: 100%; 
+                text-align: center;
+            }
+            
+             .hero {
+                padding-top: 60px; 
             }
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -811,9 +923,6 @@
             .menu-desc {
                 font-size: 12px;
             }
-            .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
             .footer {
                 padding: 16px 0 12px;
             }
@@ -829,6 +938,17 @@
                 margin-right: auto;
             }
         }
+
+        @media (max-width: 480px) {
+            .navbar { top: 10px; left: 12px; right: 12px; height: 48px; }
+            .navbar-glass-pane { border-radius: 14px; }
+            .navbar-content { padding: 0 10px; }
+            
+            .navbar-brand { font-size: 1rem; }
+            .nav-menu { border-radius: 14px; }
+        }
+        /* ========================================== */
+
     </style>
 
     <!-- Strictly Validated JSON-LD Structured Data (No Fabrications) -->
@@ -968,15 +1088,25 @@
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="#" class="nav-logo">Al-Taiba</a>
-            <div class="nav-links" id="nav-links">
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#menu" class="nav-link">Menu</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#locations" class="nav-link">Locations</a>
-                <a href="tel:6366646009" class="btn btn-primary nav-btn">Order Now</a>
+        <!-- Re-structured: Glass pane separated from contents to fix nested filter bug -->
+        <div class="navbar-glass-pane" id="navbar-glass-pane"></div>
+        
+        <div class="navbar-content">
+            <a href="#" class="navbar-brand">Al-Taiba</a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <div class="navbar-nav">
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#locations" class="nav-link">Locations</a>
+                    <a href="https://www.altaibacrispychickencenter.com/franchise/" class="nav-link">Franchise</a>
+                </div>
+                <div class="navbar-cta">
+                    <a href="tel:6366646009" class="cta-button">Order Now</a>
+                </div>
             </div>
+
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -1236,6 +1366,15 @@
         </div>
     </section>
 
+    <section id="franchise-section" class="section">
+        <div class="container text-center hidden-scroll">
+            <span class="section-subtitle">Business Opportunity</span>
+            <h2 class="section-title" style="font-size: clamp(28px, 4vw, 40px);">Start Your Own Al-Taiba Franchise</h2>
+            <p style="color: var(--color-text-light); max-width: 600px; margin: 0 auto 32px; font-size: 18px;">Join our growing family and build a profitable business with a proven concept.</p>
+            <a href="https://www.altaibacrispychickencenter.com/franchise/" class="btn btn-outline" style="padding: 16px 40px;">Explore Franchise Packages</a>
+        </div>
+    </section>
+
     <section class="cta-section hidden-scroll">
         <div class="cta-content">
             <h2>Craving something crispy?</h2>
@@ -1269,11 +1408,12 @@
         </div>
     </div>
 
+    <script src="liquid-glass.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Toggle Full Menu
+            // Full Menu Toggle
             const fullMenuBtn = document.getElementById('view-full-menu-btn');
             const fullMenuContainer = document.getElementById('full-menu-container');
 
@@ -1282,33 +1422,53 @@
                     const isHidden = fullMenuContainer.style.display === 'none';
                     if (isHidden) {
                         fullMenuContainer.style.display = 'block';
-                        setTimeout(() => {
-                            fullMenuContainer.style.opacity = '1';
-                        }, 10);
+                        setTimeout(() => { fullMenuContainer.style.opacity = '1'; }, 10);
                         fullMenuBtn.textContent = 'Hide Full Menu';
                         fullMenuBtn.setAttribute('aria-expanded', 'true');
                     } else {
                         fullMenuContainer.style.opacity = '0';
-                        setTimeout(() => {
-                            fullMenuContainer.style.display = 'none';
-                        }, 300);
+                        setTimeout(() => { fullMenuContainer.style.display = 'none'; }, 300);
                         fullMenuBtn.textContent = 'View Full Menu';
                         fullMenuBtn.setAttribute('aria-expanded', 'false');
                     }
                 });
             }
 
+            // Mobile Hamburger Menu Logic
             const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
-            const links = document.querySelectorAll('.nav-link');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    
+                    // Force a refresh of the Liquid Glass map so the bounds are calculated exactly when opened
+                    if (navMenu.classList.contains('active') && window.glassMenu) {
+                        setTimeout(() => { window.glassMenu.refresh(); }, 50);
+                    }
+                });
 
-            const toggleMenu = () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            };
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
 
-            hamburger.addEventListener('click', toggleMenu);
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768 && navMenu.classList.contains('active')) {
+                        if (!document.getElementById('navbar').contains(e.target)) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        }
+                    }
+                });
+            }
 
+            // Custom Smooth Scroll Logic
             const getTrueOffsetTop = (element) => {
                 let top = 0;
                 let current = element;
@@ -1343,18 +1503,18 @@
                 requestAnimationFrame(animation);
             };
 
-            const navbar = document.getElementById('navbar');
-            links.forEach(link => {
+            // Intercept hash links
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
                 link.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
-                    if (targetId && targetId.startsWith('#')) {
-                        e.preventDefault(); 
-                        if (navLinks.classList.contains('active')) {
-                            toggleMenu();
-                        }
-                        
+                    
+                    if (targetId === '#') {
+                        e.preventDefault();
+                        customSmoothScroll(0, 1200);
+                    } else if (targetId) {
                         const targetSection = document.querySelector(targetId);
                         if (targetSection) {
+                            e.preventDefault();
                             let sectionPosition = getTrueOffsetTop(targetSection);
                             if (targetId === '#locations' && window.innerWidth <= 992) {
                                 sectionPosition -= 50;
@@ -1365,51 +1525,40 @@
                 });
             });
 
-            const navLogo = document.querySelector('.nav-logo');
-            if (navLogo) {
-                navLogo.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    customSmoothScroll(0, 1200);
-                });
-            }
+            // Intersection Observer to highlight active navbar links
+            const sectionsToObserve = document.querySelectorAll('.section, .cta-section, .footer');
+            const observerOptions = {
+                root: null,
+                rootMargin: '-30% 0px -60% 0px',
+                threshold: 0
+            };
 
-            if (navbar) {
-                let scrollTimeout;
-                let isMouseAtTop = false;
-
-                const startHideTimer = () => {
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        if (window.scrollY > 50 && !isMouseAtTop) {
-                            navbar.classList.add('nav-hidden');
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('cta-section') || entry.target.classList.contains('footer')) {
+                            document.querySelectorAll('.navbar .nav-link').forEach(link => link.classList.remove('active'));
+                            return;
                         }
-                    }, 2000);
-                };
 
-                window.addEventListener('scroll', () => {
-                    navbar.classList.remove('nav-hidden');
-                    startHideTimer();
-                });
-
-                document.addEventListener('mousemove', (e) => {
-                    if (e.clientY < 60) {
-                        isMouseAtTop = true;
-                        navbar.classList.remove('nav-hidden');
-                        clearTimeout(scrollTimeout);
-                    } else if (isMouseAtTop) {
-                        isMouseAtTop = false;
-                        startHideTimer();
+                        const id = entry.target.getAttribute('id');
+                        if (id) {
+                            document.querySelectorAll('.navbar .nav-link').forEach(link => {
+                                const href = link.getAttribute('href');
+                                if (href === `#${id}` || (id === 'franchise-section' && href.includes('franchise'))) {
+                                    link.classList.add('active');
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                            });
+                        }
                     }
                 });
+            }, observerOptions);
 
-                navbar.addEventListener('click', () => {
-                    setTimeout(() => {
-                        isMouseAtTop = false;
-                        startHideTimer();
-                    }, 100);
-                });
-            }
+            sectionsToObserve.forEach(section => navObserver.observe(section));
 
+            // Hidden element scroll reveals
             const scrollObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1422,7 +1571,7 @@
             const elementsToAnimate = document.querySelectorAll('.hidden-scroll');
             elementsToAnimate.forEach(el => scrollObserver.observe(el));
 
-            // Desktop Tel Link Interceptor for Order Modal
+            // Desktop Tel Link Interceptor
             const orderModal = document.getElementById('order-modal');
             const closeOrderModalBtn = document.getElementById('close-order-modal');
             
@@ -1442,15 +1591,88 @@
             });
 
             if (closeOrderModalBtn && orderModal) {
-                closeOrderModalBtn.addEventListener('click', () => {
-                    orderModal.style.display = 'none';
+                closeOrderModalBtn.addEventListener('click', () => { orderModal.style.display = 'none'; });
+                orderModal.addEventListener('click', (e) => { if (e.target === orderModal) orderModal.style.display = 'none'; });
+            }
+
+            // Navbar Hide/Reveal Logic
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                let scrollTimeout;
+                let isMouseAtTop = false;
+
+                const startHideTimer = () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        // DO NOT hide if the mobile menu is open
+                        const isMenuOpen = navMenu && navMenu.classList.contains('active');
+                        
+                        if (window.scrollY > 50 && !isMouseAtTop && !isMenuOpen) {
+                            navbar.classList.add('nav-hidden');
+                        }
+                    }, 2000);
+                };
+
+                window.addEventListener('scroll', () => {
+                    navbar.classList.remove('nav-hidden');
+                    startHideTimer();
                 });
-                orderModal.addEventListener('click', (e) => {
-                    if (e.target === orderModal) {
-                        orderModal.style.display = 'none';
+
+                document.addEventListener('mousemove', (e) => {
+                    if (e.clientY < 60) {
+                        isMouseAtTop = true;
+                        navbar.classList.remove('nav-hidden');
+                        clearTimeout(scrollTimeout); 
+                    } else if (isMouseAtTop) {
+                        isMouseAtTop = false;
+                        startHideTimer();
                     }
                 });
+
+                navbar.addEventListener('click', () => {
+                    setTimeout(() => {
+                        isMouseAtTop = false;
+                        startHideTimer();
+                    }, 100);
+                });
+                
+                startHideTimer();
             }
+
+            // --- LIQUID GLASS INITIALIZATION ---
+            let glassNavbar = null;
+            window.glassMenu = null; // Exposed to window so the hamburger click can refresh it
+            const navbarGlassPane = document.getElementById('navbar-glass-pane');
+
+            if (navbarGlassPane) {
+                glassNavbar = liquidGlass(navbarGlassPane, { 
+                    scale: -112, chroma: 6, border: 0.07, mapBlur: 12, blur: 10, saturate: 1.2, radius: 20, fallbackBlur: 25 
+                });
+            }
+
+            // Apply glass separately to the dropdown menu on mobile so it visually matches
+            function manageMobileGlass() {
+                if (window.innerWidth <= 768) {
+                    if (!window.glassMenu && navMenu) {
+                        window.glassMenu = liquidGlass(navMenu, { 
+                            scale: -112, chroma: 6, border: 0.07, mapBlur: 12, blur: 10, saturate: 1.2, radius: 16, fallbackBlur: 25 
+                        });
+                    }
+                } else {
+                    if (window.glassMenu) {
+                        window.glassMenu.destroy();
+                        window.glassMenu = null;
+                    }
+                }
+            }
+
+            window.addEventListener('resize', manageMobileGlass);
+            manageMobileGlass(); // Initialize on load
+
+            window.addEventListener('beforeunload', () => {
+                if (glassNavbar && typeof glassNavbar.destroy === 'function') glassNavbar.destroy();
+                if (window.glassMenu && typeof window.glassMenu.destroy === 'function') window.glassMenu.destroy();
+            });
         });
     </script>
 </body>
