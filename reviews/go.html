@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Review Page...</title>
+  <script>
+    (function() {
+      var targetUrl = "https://www.altaibacrispychickencenter.com/reviews/select.html";
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      // 1. Android: Force external browser via Intent URI
+      if (/android/i.test(ua)) {
+        var intentUrl = "intent://www.altaibacrispychickencenter.com/reviews/select.html#Intent;scheme=https;action=android.intent.action.VIEW;end;";
+        window.location.replace(intentUrl);
+        return;
+      }
+
+      // 2. iOS 17+: Force Safari via x-safari-https scheme
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location.replace("x-safari-" + targetUrl);
+        // Fallback after 500ms if on older iOS or blocked by WebView
+        setTimeout(function() {
+          window.location.replace(targetUrl);
+        }, 500);
+        return;
+      }
+
+      // 3. Desktop or standard browser fallback
+      window.location.replace(targetUrl);
+    })();
+  </script>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+  <p>Redirecting to your browser...</p>
+  <p><a href="https://www.altaibacrispychickencenter.com/reviews/select.html">Tap here if not redirected</a></p>
+</body>
+</html>
