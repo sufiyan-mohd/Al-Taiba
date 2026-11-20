@@ -514,6 +514,87 @@
         .nav-menu { border-radius: 14px; }
     }
     /* ========================================== */
+
+    /* ===== WEBSITE CREDIT POPUP ===== */
+    .credit-popup {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1500;
+        background-color: #171717;
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: 1px solid #333333;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
+        transform: translateX(calc(100% + 32px));
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, visibility 0.35s ease;
+        will-change: transform, opacity;
+    }
+
+    .credit-popup.is-visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .credit-popup:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .credit-popup-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-anchor, 'Inter', sans-serif);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #ffffff;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .credit-popup-label {
+        color: #F28C28;
+    }
+
+    .credit-popup-author {
+        color: #ffffff;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .credit-popup {
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, visibility 0.35s ease, box-shadow 0.3s ease;
+        }
+    }
+
+    .credit-popup:focus-visible {
+        outline: 2px solid #F28C28;
+        outline-offset: 3px;
+    }
+
+    @media (max-width: 768px) {
+        .credit-popup {
+            bottom: 14px;
+            right: 14px;
+            padding: 10px 16px;
+            transform: translateX(calc(100% + 24px));
+        }
+
+        .credit-popup.is-visible {
+            transform: translateX(0);
+        }
+
+        .credit-popup-link {
+            font-size: 12px;
+        }
+    }
 </style>
 </head>
 <body>
@@ -721,6 +802,13 @@
     </div>
 
     <!-- Referencing Liquid Glass JS from root -->
+    <aside class="credit-popup" id="credit-popup" aria-label="Website credit" role="button" tabindex="0">
+        <a class="credit-popup-link" href="https://sufiyan-mohd.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
+            <span class="credit-popup-label">Website by</span>
+            <span class="credit-popup-author">Mohammed Sufiyan</span>
+        </a>
+    </aside>
+
     <script src="../liquid-glass.js"></script>
     
     <script>
@@ -947,6 +1035,42 @@
                 if (glassNavbar && typeof glassNavbar.destroy === 'function') glassNavbar.destroy();
                 if (window.glassMenu && typeof window.glassMenu.destroy === 'function') window.glassMenu.destroy();
             });
+
+            // Website credit popup: wait 10s, show for 5s, pause on hover and wait 3s after mouseleave
+            const creditPopup = document.getElementById('credit-popup');
+            if (creditPopup) {
+                const SHOW_DELAY_MS = 10000;
+                const INITIAL_VISIBLE_MS = 5000;
+                const HOVER_LEAVE_DELAY_MS = 3000;
+                let hideTimeout = null;
+                let isHovered = false;
+
+                const scheduleHide = (delay) => {
+                    clearTimeout(hideTimeout);
+                    hideTimeout = setTimeout(() => {
+                        if (!isHovered) {
+                            creditPopup.classList.remove('is-visible');
+                        }
+                    }, delay);
+                };
+
+                creditPopup.addEventListener('mouseenter', () => {
+                    isHovered = true;
+                    clearTimeout(hideTimeout);
+                });
+
+                creditPopup.addEventListener('mouseleave', () => {
+                    isHovered = false;
+                    if (creditPopup.classList.contains('is-visible')) {
+                        scheduleHide(HOVER_LEAVE_DELAY_MS);
+                    }
+                });
+
+                setTimeout(() => {
+                    creditPopup.classList.add('is-visible');
+                    scheduleHide(INITIAL_VISIBLE_MS);
+                }, SHOW_DELAY_MS);
+            }
         });
     </script>
 </body>
