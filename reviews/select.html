@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Experience | Al-Taiba Crispy Chicken Center</title>
+    <meta name="description" content="Select the Al-Taiba Crispy Chicken Center branch you visited to share your feedback and experience.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="../Assets/favicon.png">
+    <link rel="canonical" href="https://www.altaibacrispychickencenter.com/reviews/select.html">
+
+    <!-- Google Fonts matching Al-Taiba's design system -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Design tokens aligned with Al-Taiba's existing pages */
+        :root {
+            --color-primary: #ffa033;
+            --color-primary-hover: #e68d2b;
+            --color-accent: #F59E0B;
+            --color-text-dark: #1F2937;
+            --color-text-light: #6B7280;
+            --color-bg-white: #FFFFFF;
+            --color-bg-offwhite: #F9FAFB;
+
+            --font-anchor: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-flair: 'Playfair Display', Georgia, serif;
+
+            --radius-pill: 50px;
+            --radius-soft: 16px;
+
+            --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-smooth: 0.25s ease-out;
+            --transition-bounce: 0.35s var(--spring);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-anchor);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-offwhite);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Centered container consistent with review assistant pages */
+        .app-container {
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Header Section */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-primary);
+            background: rgba(255, 160, 51, 0.12);
+            padding: 6px 16px;
+            border-radius: var(--radius-pill);
+            margin-bottom: 14px;
+        }
+
+        .brand-title {
+            font-family: var(--font-flair);
+            font-size: clamp(28px, 6.5vw, 36px);
+            font-weight: 700;
+            color: var(--color-text-dark);
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .brand-subtitle {
+            font-size: 15px;
+            color: var(--color-text-light);
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        /* Branch Selection List */
+        .branch-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .branch-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 18px 22px;
+            background-color: var(--color-bg-white);
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-soft);
+            text-decoration: none;
+            color: var(--color-text-dark);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform var(--transition-bounce), border-color var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth);
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+        }
+
+        .branch-btn:hover,
+        .branch-btn:focus-visible {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 160, 51, 0.14);
+            outline: none;
+        }
+
+        .branch-btn:active {
+            transform: scale(0.98);
+        }
+
+        .branch-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .branch-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background-color: rgba(255, 160, 51, 0.12);
+            color: var(--color-primary);
+            flex-shrink: 0;
+            transition: background-color var(--transition-smooth), color var(--transition-smooth);
+        }
+
+        .branch-btn:hover .branch-icon {
+            background-color: var(--color-primary);
+            color: var(--color-bg-white);
+        }
+
+        .branch-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .branch-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .branch-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            transition: transform var(--transition-smooth), color var(--transition-smooth);
+        }
+
+        .branch-btn:hover .branch-arrow {
+            color: var(--color-primary);
+            transform: translateX(4px);
+        }
+
+        .branch-arrow svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Footer matching existing review pages */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: var(--color-text-light);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .footer-credit a {
+            color: var(--color-accent);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color var(--transition-smooth);
+        }
+
+        .footer-credit a:hover {
+            color: var(--color-primary-hover);
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 640px) {
+            .app-container {
+                padding: 48px 24px;
+            }
+
+            .branch-btn {
+                padding: 20px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="app-container">
+        <header class="brand-header">
+            <span class="brand-badge">Al-Taiba Crispy Chicken Center</span>
+            <h1 class="brand-title">Share Your Experience</h1>
+            <p class="brand-subtitle">Please select the branch you visited to leave your feedback.</p>
+        </header>
+
+        <nav class="branch-list" aria-label="Select Al-Taiba Branch">
+            <!-- BTM Layout Branch -->
+            <a href="https://www.altaibacrispychickencenter.com/reviews/btm-layout.html" class="branch-btn">
+                <span class="branch-info">
+                    <span class="branch-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </span>
+                    <span class="branch-name">BTM Layout</span>
+                </span>
+                <span class="branch-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </span>
+            </a>
+
+            <!-- Hegde Nagar Branch -->
+            <a href="https://www.altaibacrispychickencenter.com/reviews/hegdenagar.html" class="branch-btn">
+                <span class="branch-info">
+                    <span class="branch-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </span>
+                    <span class="branch-name">Hegde Nagar</span>
+                </span>
+                <span class="branch-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </span>
+            </a>
+
+            <!-- Kanakanagar Branch -->
+            <a href="https://www.altaibacrispychickencenter.com/reviews/kanakanagar.html" class="branch-btn">
+                <span class="branch-info">
+                    <span class="branch-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </span>
+                    <span class="branch-name">Kanakanagar</span>
+                </span>
+                <span class="branch-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </span>
+            </a>
+
+            <!-- Shivajinagar Branch -->
+            <a href="https://www.altaibacrispychickencenter.com/reviews/shivajinagar.html" class="branch-btn">
+                <span class="branch-info">
+                    <span class="branch-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </span>
+                    <span class="branch-name">Shivajinagar</span>
+                </span>
+                <span class="branch-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div>&copy; <span id="year">2026</span> Al-Taiba Crispy Chicken Center</div>
+        <div class="footer-credit">Website by <a href="https://sufiyan-mohd.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Mohammed Sufiyan</a></div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
